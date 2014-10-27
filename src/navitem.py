@@ -1,6 +1,8 @@
 __author__ = 'elijahfoster-wysocki'
+#Version 0.1
 
-import re
+import shutil
+import tempfile
 
 # EDIT THIS IF YOU HAVE CHANGED YOUR DIRECTORY NAMES.
 directory = 'work/input.txt'
@@ -8,20 +10,16 @@ directory = 'work/input.txt'
 #These can be found on Template:G/Mods.
 modname = raw_input("What is the mod abbreviation?\n")
 
-input_file = open(directory)
-x = input_file.readlines()
-if len(x) > 0:
-    for line in input_file:
-        input_file.write("{{NI|" + x + "|mod=" + modname + "}}")
-input_file.close()
-
-
-
+tmp = tempfile.NamedTemporaryFile(delete=False)
+with open(directory) as finput:
+    with open(tmp.name, 'w') as ftmp:
+        for line in finput:
+            x = str(line)
+            ftmp.write('{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}\n")
+shutil.move(tmp.name, directory)
 
 '''
-for line in hand:
-    line = line.rstrip()
-    x = re.findall()
-    if len(x) > 0:
-        print "{{NI|" + x + "|mod=" + modname + "}}"
+== Changelog ==
+=== 0.1 ===
+* initial
 '''
