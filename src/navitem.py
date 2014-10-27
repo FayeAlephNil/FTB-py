@@ -1,5 +1,5 @@
 __author__ = 'elijahfoster-wysocki'
-#Version 0.1.2
+#Version 0.1.3
 
 import shutil
 import tempfile
@@ -19,7 +19,7 @@ with open(directory) as finput:
     with open(tmp.name, 'w') as ftmp:
         for line in finput:
             x = str(line)
-            ftmp.write('    -->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
+            ftmp.write('\t-->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
 try:
     shutil.copyfile(tmp.name, new_dir)
 except:
@@ -30,6 +30,9 @@ sys.exit()
 
 '''
 == Changelog ==
+=== 0.1.3 ===
+* FIX: Fixed tab spacing; it's no longer 4 spaces.
+
 === 0.1.2 ===
 * FIX: No longer overwrites input; instead it makes output.txt.
 * FIX: It should now work, though be weird, on non-UNIX-based systems. (thanks wolfman)
