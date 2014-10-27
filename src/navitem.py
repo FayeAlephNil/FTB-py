@@ -1,5 +1,5 @@
 __author__ = 'elijahfoster-wysocki'
-#Version 0.2
+#Version 0.1.2
 
 import shutil
 import tempfile
@@ -8,7 +8,7 @@ import os
 
 # EDIT THIS IF YOU HAVE CHANGED YOUR DIRECTORY NAMES.
 directory = 'work/input.txt'
-new_dir = 'work/udungoofd.txt'
+new_dir = 'work/output.txt'
 
 #These can be found on Template:G/Mods.
 #If you are running Python 3, change raw_input to input for it to work. You may still get errors though.
@@ -21,21 +21,25 @@ with open(directory) as finput:
             x = str(line)
             ftmp.write('    -->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
 try:
-    shutil.move(tmp.name, directory)
+    shutil.move(tmp.name, new_dir)
 except:
-    print "Permission Error/IOError! Trying something else save the file!"
+    print "There was an issue using shutil! Trying to use os instead."
     os.rename(directory, new_dir)
 
 sys.exit()
 
 '''
 == Changelog ==
-=== 0.3 ===
-* hopefully fixed the Windows issue
-* it now exits properly using sys.exit()
-=== 0.2 ===
-* fixed the text that is written.
-* changed modname raw_input text
-=== 0.1 ===
-* initial
+=== 0.1.2 ===
+* FIX: No longer overwrites input; instead it makes output.txt.
+* FIX: It should now work, though be weird, on non-UNIX-based systems. (thanks wolfman)
+* FIX: Program exits properly with sys.exit
+
+=== 0.1.1 ===
+* FIX: Made the text that gets written actually correct.
+* TWEAK: Changed modname raw_input text.
+
+=== 0.1.0 ===
+* Initial build.
+
 '''
