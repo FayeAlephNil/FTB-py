@@ -21,7 +21,7 @@ with open(directory) as finput:
             x = str(line)
             ftmp.write('    -->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
 try:
-    shutil.move(tmp.name, new_dir)
+    shutil.copyfile(tmp.name, new_dir)
 except:
     print "There was an issue using shutil! Trying to use os instead."
     os.rename(directory, new_dir)
