@@ -29,6 +29,6 @@ sys.exit()
 '''
 == Changelog ==
 === 0.1.0 ===
-* Initial
+* Initial. No big navboxes so far.
 
 '''
