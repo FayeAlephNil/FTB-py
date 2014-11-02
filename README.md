@@ -12,3 +12,7 @@ navbox.py
 This will ask you if you want a big or small navbox. Currently, only small ones are supported. It will then ask you how many groups you want. This can be anywhere from 1-20. It will ask you for the name of each group, and the mod's name, then it will use this data to create a formatted navbox. It doesn't do anything with the |list parameters.
 
 navbox_small.py is a sub-file that is needed for navbox.py.
+
+mod_abbrev.py
+-------------
+This will ask you what the mod name is, and the abbreviation, and it will generate the code that should be put into the Template:G/Mods into abbrev_output.txt. This is just to make it slightly easier, and prevent any errors.
