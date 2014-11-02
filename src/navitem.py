@@ -1,5 +1,5 @@
-__author__ = 'elijahfoster-wysocki'
-#Version 0.1.4
+# Created by Eli Foster
+# 0.1.4
 
 import shutil
 import tempfile
