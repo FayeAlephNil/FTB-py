@@ -1,5 +1,5 @@
 # Created by Eli Foster
-# 0.1
+# 0.1.1
 # If you are running Python 3, change all instances of raw_input to input.
 # This program should be used with navitem. This will not do any of the list#= stuff, use navitem for that. This is just for formatting a box.
 
@@ -7,7 +7,7 @@ import sys
 from navbox_small import small_navbox
 
 '''The output file dir. Change this if you want it to be different. This file must already exist.'''
-output = 'work/navbox/output.txt'
+output = 'work/navbox_output.txt'
 
 nav_complexity = raw_input("Would you like it small or big?\n")
 
@@ -28,6 +28,8 @@ sys.exit()
 
 '''
 == Changelog ==
+=== 0.1.1 ===
+* FIX: Changed output dir to actually work.
 === 0.1.0 ===
 * Initial. No big navboxes so far.
 

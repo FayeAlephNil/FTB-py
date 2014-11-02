@@ -1,5 +1,5 @@
 # Created by Eli Foster
-# 0.1.4
+# 0.1.5
 
 import shutil
 import tempfile
@@ -7,8 +7,8 @@ import sys
 import os
 
 # EDIT THIS IF YOU HAVE CHANGED YOUR DIRECTORY NAMES.
-directory = 'work/navitem/input.txt'
-new_dir = 'work/navitem/output.txt'
+directory = 'work/navitem_input.txt'
+new_dir = 'work/navitem_output.txt'
 
 #These can be found on Template:G/Mods.
 #If you are running Python 3, change raw_input to input for it to work. You may still get errors though.
@@ -30,6 +30,9 @@ sys.exit()
 
 '''
 == Changelog ==
+=== 0.1.5 ===
+* FIX: Changed directories AGAIN.
+
 === 0.1.4 ===
 * FIX: Changed directories to work/navitem/input-output.txt, for when I add more programs to this repo.
 
