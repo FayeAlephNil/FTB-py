@@ -3,7 +3,7 @@
 
 import sys
 
-output = 'work/navbox/output.txt'
+output = 'work/navbox_output.txt'
 
 def small_navbox():
     group_num = raw_input("How many groups would you like? Maximum of 20\n")
