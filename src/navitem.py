@@ -1,5 +1,5 @@
 # Created by Eli Foster
-# 0.1.5
+# 0.1.6
 
 import shutil
 import tempfile
@@ -10,26 +10,29 @@ import os
 directory = 'work/navitem_input.txt'
 new_dir = 'work/navitem_output.txt'
 
-#These can be found on Template:G/Mods.
-#If you are running Python 3, change raw_input to input for it to work. You may still get errors though.
-modname = raw_input("What is the mod abbreviation?\nIf you are unsure, or it is not on the list, please contact Santa. If you are Santa, do it.\n")
+def run():
+    #These can be found on Template:G/Mods.
+    #If you are running Python 3, change raw_input to input for it to work. You may still get errors though.
+    modname = raw_input("What is the mod abbreviation?\nIf you are unsure, or it is not on the list, please contact Santa. If you are Santa, do it.\n")
 
-tmp = tempfile.NamedTemporaryFile(delete=False)
-with open(directory) as finput:
-    with open(tmp.name, 'w') as ftmp:
-        for line in finput:
-            x = str(line)
-            ftmp.write('\t-->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
-try:
-    shutil.copyfile(tmp.name, new_dir)
-except:
-    print "There was an issue using shutil! Trying to use os instead."
-    os.rename(directory, new_dir)
+    tmp = tempfile.NamedTemporaryFile(delete=False)
+    with open(directory) as finput:
+        with open(tmp.name, 'w') as ftmp:
+            for line in finput:
+                x = str(line)
+                ftmp.write('\t-->{{NI|' + x.rstrip("\r\n") + "|mod=" + modname + "}}{{,}}<!--\n")
+    try:
+        shutil.copyfile(tmp.name, new_dir)
+    except:
+        print "There was an issue using shutil! Trying to use os instead."
+        os.rename(directory, new_dir)
 
-sys.exit()
 
 '''
 == Changelog ==
+=== 0.1.6 ===
+* FIX: Shoved everything in run() method
+
 === 0.1.5 ===
 * FIX: Changed directories AGAIN.
 
