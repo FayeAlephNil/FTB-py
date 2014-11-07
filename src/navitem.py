@@ -27,6 +27,7 @@ def run():
         print "There was an issue using shutil! Trying to use os instead."
         os.rename(directory, new_dir)
 
+run()
 
 '''
 == Changelog ==
